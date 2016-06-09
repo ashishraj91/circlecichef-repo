@@ -3,5 +3,5 @@
 #     - docker
 dependencies:
   override:
-    - ssh -i ~/.ssh/config ubuntu@54.169.218.108 bash -c "cp ~/${CIRCLE_PROJECT_REPONAME} /home/ubuntu/chef-repo/cookbook;pushd /home/ubuntu/chef-repo/cookbook/${CIRCLE_PROJECT_REPONAME};chef exec kitchen test"
+    - ssh -i ~/.ssh/config ubuntu@54.169.218.108 bash -c "cp ~/${circlecichef-repo} /home/ubuntu/chef-repo/cookbook;pushd /home/ubuntu/chef-repo/cookbook/${CIRCLE_PROJECT_REPONAME};chef exec kitchen test"
     
