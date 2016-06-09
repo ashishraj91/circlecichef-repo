@@ -2,8 +2,8 @@
 #   services:
 #     - docker
 dependencies:
-  pre:
-    - ssh -i ~/.ssh/id_54.169.218.108 ubuntu@54.169.218.108
+  override:
+    - ssh -i ~/.ssh/id_54.169.218.108 -p ubuntu@54.169.218.108
     # - if ! chef -v; then
     #     if ! [ -f chefdk_0.3.5-1_amd64.deb ]; then
     #       wget https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.14.25-1_amd64.deb;
@@ -15,14 +15,17 @@ dependencies:
     # - sudo chef gem uninstall chefspec
     # - chef gem install chefspec:4.0.1
     # - mkdir ~/.chef
-
-  # cache_directories:
-  #   - ./chefdk_0.3.5-1_amd64.deb
-test:
-  override:
     - cp ~/${CIRCLE_PROJECT_REPONAME} /home/ubuntu/chef-repo/cookbook
     - cd /home/ubuntu/chef-repo/cookbook/${CIRCLE_PROJECT_REPONAME}
     - chef exec kitchen test
+
+  # cache_directories:
+  #   - ./chefdk_0.3.5-1_amd64.deb
+# test:
+#   override:
+#     - cp ~/${CIRCLE_PROJECT_REPONAME} /home/ubuntu/chef-repo/cookbook
+#     - cd /home/ubuntu/chef-repo/cookbook/${CIRCLE_PROJECT_REPONAME}
+#     - chef exec kitchen test
     # - chef exec berks install
     # - chef exec rspec -P spec/**/*_spec.rb --tty --color
     # - chef exec foodcritic . -X spec -f any -t ~FC003
