@@ -3,5 +3,5 @@
 #     - docker
 dependencies:
   override:
-    - scp -i ~/.ssh/config -r $CIRCLE_PROJECT_REPONAME ubuntu@54.169.218.108:/chef-repo/cookbooks
+    - scp -i ~/.ssh/config -r $CIRCLE_PROJECT_REPONAME ubuntu@54.169.218.108:/tmp
     - ssh -i ~/.ssh/config ubuntu@54.169.218.108 bash -c "ls -l"
