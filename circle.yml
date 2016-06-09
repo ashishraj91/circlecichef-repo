@@ -3,4 +3,4 @@
 #     - docker
 dependencies:
   override:
-    - ssh -i ~/.ssh/config ubuntu@54.169.218.108 bash -c "ls -l;pushd dirTest;sudo su;kitchen test"
+    - ssh -i ~/.ssh/config ec2-user@54.169.218.108 bash -c "ls -l;pushd dirTest;sudo su;kitchen test"
