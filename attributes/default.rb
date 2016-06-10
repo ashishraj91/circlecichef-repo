@@ -6,9 +6,9 @@
 #
 # All rights reserved - Do Not Redistribute
 
-default['dirTest']['dir'] = '/home/ubuntu/dir1'
-default['dirTest']['user'] = 'ubuntu'
-default['dirTest']['group'] = 'ubuntu'
-default['dirTest']['root_user'] = 'ubuntu'
-default['dirTest']['root_group'] = 'ubuntu'
+default['dirTest']['dir'] = '/tmp/dir1'
+default['dirTest']['user'] = 'root'
+default['dirTest']['group'] = 'root'
+default['dirTest']['root_user'] = 'root'
+default['dirTest']['root_group'] = 'root'
 default['dirTest']['tmp'] = '/tmp/mydirs/#{dir}'
